@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Rich Text Editor</h1>
+<div mat-dialog-content [froalaEditor] [(froalaModel)]="localData">
+  Hello, Froala!
+</div>
+<div mat-dialog-actions>
+  <button
+    style="margin-top: 20px"
+    mat-raised-button
+    [mat-dialog-close]="data"
+    (click)="doAction()"
+    cdkFocusInitial
+  >
+    Submit
+  </button>
+</div>

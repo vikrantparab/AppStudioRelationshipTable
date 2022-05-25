@@ -1,0 +1,640 @@
+{
+  "type": "SupplierToSupplier",
+  "properties": [],
+  "relatedItem": {
+    "type": "as_DemoItem",
+    "properties": [
+      {
+        "name": "classification",
+        "label": "classification",
+        "dataType": {
+          "label": "String",
+          "value": "string"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 512,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "supplier_name",
+        "label": "supplier_name",
+        "dataType": {
+          "label": "String",
+          "value": "string"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": true,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 32,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "on_board",
+        "label": "on_board",
+        "dataType": {
+          "label": "Date",
+          "value": "date"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": "short_date",
+        "readOnly": false,
+        "length": 0,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "contact_number",
+        "label": "contact_number",
+        "dataType": {
+          "label": "String",
+          "value": "string"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 13,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "locations",
+        "label": "locations",
+        "dataType": {
+          "label": "Multi Value List",
+          "value": "mv_list"
+        },
+        "dataSource": {
+          "id": "AEABAF4DEB014B0D8395C70D68221011",
+          "name": "Countries",
+          "listOptions": [
+            {
+              "label": "Albania",
+              "value": "Albania"
+            },
+            {
+              "label": "Argentina",
+              "value": "Argentina"
+            },
+            {
+              "label": "Armenia",
+              "value": "Armenia"
+            },
+            {
+              "label": "Australia",
+              "value": "Australia"
+            },
+            {
+              "label": "Austria",
+              "value": "Austria"
+            },
+            {
+              "label": "Bahamas",
+              "value": "Bahamas"
+            },
+            {
+              "label": "Belgium",
+              "value": "Belgium"
+            },
+            {
+              "label": "Bolivia",
+              "value": "Bolivia"
+            },
+            {
+              "label": "Brazil",
+              "value": "Brazil"
+            },
+            {
+              "label": "Bulgaria",
+              "value": "Bulgaria"
+            },
+            {
+              "label": "Canada",
+              "value": "Canada"
+            },
+            {
+              "label": "Chile",
+              "value": "Chile"
+            },
+            {
+              "label": "China",
+              "value": "China"
+            },
+            {
+              "label": "Colombia",
+              "value": "Colombia"
+            },
+            {
+              "label": "Congo",
+              "value": "Congo"
+            },
+            {
+              "label": "Costa Rica",
+              "value": "Costa Rica"
+            },
+            {
+              "label": "Cyprus",
+              "value": "Cyprus"
+            },
+            {
+              "label": "Czech Republic",
+              "value": "Czech Republic"
+            },
+            {
+              "label": "Denmark",
+              "value": "Denmark"
+            },
+            {
+              "label": "Ecuador",
+              "value": "Ecuador"
+            },
+            {
+              "label": "Egypt",
+              "value": "Egypt"
+            },
+            {
+              "label": "El Salvador",
+              "value": "El Salvador"
+            },
+            {
+              "label": "Estonia",
+              "value": "Estonia"
+            },
+            {
+              "label": "Finland",
+              "value": "Finland"
+            },
+            {
+              "label": "France",
+              "value": "France"
+            },
+            {
+              "label": "Germany",
+              "value": "Germany"
+            },
+            {
+              "label": "Greece",
+              "value": "Greece"
+            },
+            {
+              "label": "Greenland",
+              "value": "Greenland"
+            },
+            {
+              "label": "Guam",
+              "value": "Guam"
+            },
+            {
+              "label": "Guatemala",
+              "value": "Guatemala"
+            },
+            {
+              "label": "Honduras",
+              "value": "Honduras"
+            },
+            {
+              "label": "Hong Kong",
+              "value": "Hong Kong"
+            },
+            {
+              "label": "Hungary",
+              "value": "Hungary"
+            },
+            {
+              "label": "Iceland",
+              "value": "Iceland"
+            },
+            {
+              "label": "India",
+              "value": "India"
+            },
+            {
+              "label": "Indonesia",
+              "value": "Indonesia"
+            },
+            {
+              "label": "Ireland",
+              "value": "Ireland"
+            },
+            {
+              "label": "Israel",
+              "value": "Israel"
+            },
+            {
+              "label": "Italy",
+              "value": "Italy"
+            },
+            {
+              "label": "Jamaica",
+              "value": "Jamaica"
+            },
+            {
+              "label": "Japan",
+              "value": "Japan"
+            },
+            {
+              "label": "Kenya",
+              "value": "Kenya"
+            },
+            {
+              "label": "Lebanon",
+              "value": "Lebanon"
+            },
+            {
+              "label": "Liberia",
+              "value": "Liberia"
+            },
+            {
+              "label": "Lithuania",
+              "value": "Lithuania"
+            },
+            {
+              "label": "Luxemborg",
+              "value": "Luxemborg"
+            },
+            {
+              "label": "Malaysia",
+              "value": "Malaysia"
+            },
+            {
+              "label": "Mexico",
+              "value": "Mexico"
+            },
+            {
+              "label": "Netherlands",
+              "value": "Netherlands"
+            },
+            {
+              "label": "New Zealand",
+              "value": "New Zealand"
+            },
+            {
+              "label": "Nicaragua",
+              "value": "Nicaragua"
+            },
+            {
+              "label": "Nigeria",
+              "value": "Nigeria"
+            },
+            {
+              "label": "Norway",
+              "value": "Norway"
+            },
+            {
+              "label": "Panama",
+              "value": "Panama"
+            },
+            {
+              "label": "Paraguay",
+              "value": "Paraguay"
+            },
+            {
+              "label": "Peru",
+              "value": "Peru"
+            },
+            {
+              "label": "Philippines",
+              "value": "Philippines"
+            },
+            {
+              "label": "Poland",
+              "value": "Poland"
+            },
+            {
+              "label": "Portugal",
+              "value": "Portugal"
+            },
+            {
+              "label": "Puerto Rico",
+              "value": "Puerto Rico"
+            },
+            {
+              "label": "Romania",
+              "value": "Romania"
+            },
+            {
+              "label": "Russian Federation",
+              "value": "Russian Federation"
+            },
+            {
+              "label": "Singapore",
+              "value": "Singapore"
+            },
+            {
+              "label": "South Africa",
+              "value": "South Africa"
+            },
+            {
+              "label": "South Korea",
+              "value": "South Korea"
+            },
+            {
+              "label": "Spain",
+              "value": "Spain"
+            },
+            {
+              "label": "Sweden",
+              "value": "Sweden"
+            },
+            {
+              "label": "Switzerland",
+              "value": "Switzerland"
+            },
+            {
+              "label": "Taiwan",
+              "value": "Taiwan"
+            },
+            {
+              "label": "Thailand",
+              "value": "Thailand"
+            },
+            {
+              "label": "Turkey",
+              "value": "Turkey"
+            },
+            {
+              "label": "Ukraine",
+              "value": "Ukraine"
+            },
+            {
+              "label": "United Kingdom",
+              "value": "United Kingdom"
+            },
+            {
+              "label": "United States",
+              "value": "United States"
+            },
+            {
+              "label": "Uruguay",
+              "value": "Uruguay"
+            },
+            {
+              "label": "Venezuela",
+              "value": "Venezuela"
+            },
+            {
+              "label": "Yugoslavia",
+              "value": "Yugoslavia"
+            }
+          ],
+          "filterListOptions": null,
+          "singularLabel": null,
+          "pluralLabel": null
+        },
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 256,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "max_quantity",
+        "label": "max_quantity",
+        "dataType": {
+          "label": "Integer",
+          "value": "integer"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "source_type",
+        "label": "source_type",
+        "dataType": {
+          "label": "List",
+          "value": "list"
+        },
+        "dataSource": {
+          "id": "F7553D600D57489BB81309E32835AFEC",
+          "name": "Make Buy",
+          "listOptions": [
+            {
+              "label": "Make",
+              "value": "Make"
+            },
+            {
+              "label": "Buy",
+              "value": "Buy"
+            }
+          ],
+          "filterListOptions": null,
+          "singularLabel": null,
+          "pluralLabel": null
+        },
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 125,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "logo",
+        "label": "logo",
+        "dataType": {
+          "label": "Image",
+          "value": "image"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "contract",
+        "label": "contract",
+        "dataType": {
+          "label": "Item",
+          "value": "item"
+        },
+        "dataSource": {
+          "id": "8052A558B9084D41B9F11805E464F443",
+          "name": "File",
+          "listOptions": null,
+          "filterListOptions": null,
+          "singularLabel": "File",
+          "pluralLabel": "Files"
+        },
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "custom_notes",
+        "label": "custom_notes",
+        "dataType": {
+          "label": "Formatted Text",
+          "value": "formatted text"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "is_active",
+        "label": "is_active",
+        "dataType": {
+          "label": "Boolean",
+          "value": "boolean"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "signature",
+        "label": "signature",
+        "dataType": {
+          "label": "Image",
+          "value": "image"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "part",
+        "label": "part",
+        "dataType": {
+          "label": "Item",
+          "value": "item"
+        },
+        "dataSource": {
+          "id": "4F1AC04A2B484F3ABA4E20DB63808A88",
+          "name": "Part",
+          "listOptions": null,
+          "filterListOptions": null,
+          "singularLabel": "Part",
+          "pluralLabel": "Parts"
+        },
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 0,
+        "precision": 0,
+        "classStructure": null
+      },
+      {
+        "name": "weight",
+        "label": "weight",
+        "dataType": {
+          "label": "Float",
+          "value": "float"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 2,
+        "precision": 3,
+        "classStructure": null
+      },
+      {
+        "name": "totalweight",
+        "label": "totalweight",
+        "dataType": {
+          "label": "Decimal",
+          "value": "decimal"
+        },
+        "dataSource": null,
+        "defaultValue": null,
+        "unique": false,
+        "required": false,
+        "classpath": null,
+        "pattern": null,
+        "readOnly": false,
+        "length": 0,
+        "scale": 2,
+        "precision": 4,
+        "classStructure": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+<p *ngIf="isEdit !== 'true'">{{value}}</p>
+<mat-form-field *ngIf="isEdit === 'true'">
+    <mat-label>Is Active</mat-label>
+    <mat-select [(value)]="value" (selectionChange)="onValueUpdate($event)">
+        <mat-option value="true">True</mat-option>
+        <mat-option value="false">False</mat-option>
+    </mat-select>
+  </mat-form-field>

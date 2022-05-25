@@ -1,0 +1,1491 @@
+{
+  "id": "2472d531-9f87-db23-4e5d-923e1bde9baf",
+  "name": "SupplierToSupplier",
+  "type": 30,
+  "caption": "",
+  "body": "",
+  "margin": {
+    "top": 5,
+    "right": 5,
+    "bottom": 5,
+    "left": 5
+  },
+  "size": {
+    "width": 640,
+    "height": 480
+  },
+  "placement": {
+    "width": 250,
+    "alignment": 1,
+    "mode": 1
+  },
+  "font": {
+    "name": "Tahoma",
+    "size": 12
+  },
+  "items": [],
+  "label": "Supplier",
+  "selectionMode": 1,
+  "controls": [],
+  "rows": 4,
+  "visibleIf": [],
+  "showCaption": true,
+  "isDisable": false,
+  "alwaysEnabled": true,
+  "pageId": "",
+  "isActive": false,
+  "separator": {
+    "direction": "none",
+    "type": "solid",
+    "thickness": 1,
+    "color": "#0a578f"
+  },
+  "sectionConfig": null,
+  "documentFilter": {
+    "itemType": {},
+    "search": "",
+    "propertyType": 1,
+    "property": {},
+    "relation": {},
+    "relationProperty": {},
+    "documentType": 1
+  },
+  "selectedDocuments": [],
+  "selectedItems": [],
+  "readOnly": false,
+  "orientationMode": 2,
+  "showLabel": true,
+  "validation": {
+    "type": 1,
+    "requiredCount": 0,
+    "requiredMaxCount": 0,
+    "message": "",
+    "resourceId": "",
+    "rule": []
+  },
+  "itemFilter": {
+    "itemType": {},
+    "search": "",
+    "relation": {},
+    "properties": [],
+    "levelSelection": 1,
+    "toType": "",
+    "configurationType": 1
+  },
+  "defaultValueExpression": "",
+  "values": [],
+  "hasValidationErrors": false,
+  "numberDateFormatting": {
+    "formatSpecifier": "",
+    "locale": ""
+  },
+  "conditionalFormats": [],
+  "selectedStyleFormat": {
+    "rule": [],
+    "expressionString": "",
+    "bold": false,
+    "italic": false,
+    "underline": false,
+    "foregroundColor": "#ffffff",
+    "backgroundColor": "#000000"
+  },
+  "isPropertyControl": true,
+  "isContainerControl": false,
+  "isVisible": true,
+  "columns": [
+    {
+      "name": "related.supplier_name",
+      "label": "supplier_name",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "bf6ee05e-6d12-9f6d-4edb-d0433aebcc9c",
+        "name": "related.supplier_name",
+        "type": 1,
+        "label": "supplier_name",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [null],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "String",
+        "dataType": 2,
+        "pattern": null,
+        "scale": 0,
+        "precision": 0,
+        "length": 32,
+        "tempDate": ""
+      },
+      "type": 1
+    },
+    {
+      "name": "related.on_board",
+      "label": "On Board Date",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "fbc282f6-7fa8-71cb-6c37-64241fa5cc65",
+        "name": "related.on_board",
+        "type": 3,
+        "label": "On Board Date",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [null],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Date",
+        "dataType": 6,
+        "pattern": "short_date",
+        "scale": 0,
+        "precision": 0,
+        "length": 0,
+        "tempDate": ""
+      },
+      "type": 1
+    },
+    {
+      "name": "related.contact_number",
+      "label": "Contact Number",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "7af516d2-a464-fe1e-6dfb-1451b67dc56f",
+        "name": "related.contact_number",
+        "type": 1,
+        "label": "Contact Number",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [null],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "String",
+        "dataType": 2,
+        "pattern": null,
+        "scale": 0,
+        "precision": 0,
+        "length": 13,
+        "tempDate": ""
+      },
+      "type": 1
+    },
+    {
+      "name": "related.max_quantity",
+      "label": "Max Order Quantity(Per month)",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "b777aa50-5fe6-dc42-5c8f-40e1134b4940",
+        "name": "related.max_quantity",
+        "type": 1,
+        "label": "Max Order Quantity(Per month)",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [null],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Integer",
+        "dataType": 3,
+        "pattern": null,
+        "scale": 0,
+        "precision": 0,
+        "length": 0,
+        "tempDate": ""
+      },
+      "type": 1
+    },
+    {
+      "name": "related.locations",
+      "label": "Locations",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "444c444f-24ec-a29a-ac04-f512e7c39055",
+        "name": "related.locations",
+        "type": 7,
+        "label": "Locations",
+        "selectionMode": 2,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [
+          {
+            "label": "Albania",
+            "value": "Albania",
+            "selected": false
+          }
+        ],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "listStyle": 1,
+        "dataTypeTypeName": "Multi Value List",
+        "dataType": 9,
+        "dataSource": "Countries",
+        "options": [
+          {
+            "label": "Albania",
+            "value": "Albania",
+            "selected": false
+          },
+          {
+            "label": "Argentina",
+            "value": "Argentina",
+            "selected": false
+          },
+          {
+            "label": "Armenia",
+            "value": "Armenia",
+            "selected": false
+          },
+          {
+            "label": "Australia",
+            "value": "Australia",
+            "selected": false
+          },
+          {
+            "label": "Austria",
+            "value": "Austria",
+            "selected": false
+          },
+          {
+            "label": "Bahamas",
+            "value": "Bahamas",
+            "selected": false
+          },
+          {
+            "label": "Belgium",
+            "value": "Belgium",
+            "selected": false
+          },
+          {
+            "label": "Bolivia",
+            "value": "Bolivia",
+            "selected": false
+          },
+          {
+            "label": "Brazil",
+            "value": "Brazil",
+            "selected": false
+          },
+          {
+            "label": "Bulgaria",
+            "value": "Bulgaria",
+            "selected": false
+          },
+          {
+            "label": "Canada",
+            "value": "Canada",
+            "selected": false
+          },
+          {
+            "label": "Chile",
+            "value": "Chile",
+            "selected": false
+          },
+          {
+            "label": "China",
+            "value": "China",
+            "selected": false
+          },
+          {
+            "label": "Colombia",
+            "value": "Colombia",
+            "selected": false
+          },
+          {
+            "label": "Congo",
+            "value": "Congo",
+            "selected": false
+          },
+          {
+            "label": "Costa Rica",
+            "value": "Costa Rica",
+            "selected": false
+          },
+          {
+            "label": "Cyprus",
+            "value": "Cyprus",
+            "selected": false
+          },
+          {
+            "label": "Czech Republic",
+            "value": "Czech Republic",
+            "selected": false
+          },
+          {
+            "label": "Denmark",
+            "value": "Denmark",
+            "selected": false
+          },
+          {
+            "label": "Ecuador",
+            "value": "Ecuador",
+            "selected": false
+          },
+          {
+            "label": "Egypt",
+            "value": "Egypt",
+            "selected": false
+          },
+          {
+            "label": "El Salvador",
+            "value": "El Salvador",
+            "selected": false
+          },
+          {
+            "label": "Estonia",
+            "value": "Estonia",
+            "selected": false
+          },
+          {
+            "label": "Finland",
+            "value": "Finland",
+            "selected": false
+          },
+          {
+            "label": "France",
+            "value": "France",
+            "selected": false
+          },
+          {
+            "label": "Germany",
+            "value": "Germany",
+            "selected": false
+          },
+          {
+            "label": "Greece",
+            "value": "Greece",
+            "selected": false
+          },
+          {
+            "label": "Greenland",
+            "value": "Greenland",
+            "selected": false
+          },
+          {
+            "label": "Guam",
+            "value": "Guam",
+            "selected": false
+          },
+          {
+            "label": "Guatemala",
+            "value": "Guatemala",
+            "selected": false
+          },
+          {
+            "label": "Honduras",
+            "value": "Honduras",
+            "selected": false
+          },
+          {
+            "label": "Hong Kong",
+            "value": "Hong Kong",
+            "selected": false
+          },
+          {
+            "label": "Hungary",
+            "value": "Hungary",
+            "selected": false
+          },
+          {
+            "label": "Iceland",
+            "value": "Iceland",
+            "selected": false
+          },
+          {
+            "label": "India",
+            "value": "India",
+            "selected": false
+          },
+          {
+            "label": "Indonesia",
+            "value": "Indonesia",
+            "selected": false
+          },
+          {
+            "label": "Ireland",
+            "value": "Ireland",
+            "selected": false
+          },
+          {
+            "label": "Israel",
+            "value": "Israel",
+            "selected": false
+          },
+          {
+            "label": "Italy",
+            "value": "Italy",
+            "selected": false
+          },
+          {
+            "label": "Jamaica",
+            "value": "Jamaica",
+            "selected": false
+          },
+          {
+            "label": "Japan",
+            "value": "Japan",
+            "selected": false
+          },
+          {
+            "label": "Kenya",
+            "value": "Kenya",
+            "selected": false
+          },
+          {
+            "label": "Lebanon",
+            "value": "Lebanon",
+            "selected": false
+          },
+          {
+            "label": "Liberia",
+            "value": "Liberia",
+            "selected": false
+          },
+          {
+            "label": "Lithuania",
+            "value": "Lithuania",
+            "selected": false
+          },
+          {
+            "label": "Luxemborg",
+            "value": "Luxemborg",
+            "selected": false
+          },
+          {
+            "label": "Malaysia",
+            "value": "Malaysia",
+            "selected": false
+          },
+          {
+            "label": "Mexico",
+            "value": "Mexico",
+            "selected": false
+          },
+          {
+            "label": "Netherlands",
+            "value": "Netherlands",
+            "selected": false
+          },
+          {
+            "label": "New Zealand",
+            "value": "New Zealand",
+            "selected": false
+          },
+          {
+            "label": "Nicaragua",
+            "value": "Nicaragua",
+            "selected": false
+          },
+          {
+            "label": "Nigeria",
+            "value": "Nigeria",
+            "selected": false
+          },
+          {
+            "label": "Norway",
+            "value": "Norway",
+            "selected": false
+          },
+          {
+            "label": "Panama",
+            "value": "Panama",
+            "selected": false
+          },
+          {
+            "label": "Paraguay",
+            "value": "Paraguay",
+            "selected": false
+          },
+          {
+            "label": "Peru",
+            "value": "Peru",
+            "selected": false
+          },
+          {
+            "label": "Philippines",
+            "value": "Philippines",
+            "selected": false
+          },
+          {
+            "label": "Poland",
+            "value": "Poland",
+            "selected": false
+          },
+          {
+            "label": "Portugal",
+            "value": "Portugal",
+            "selected": false
+          },
+          {
+            "label": "Puerto Rico",
+            "value": "Puerto Rico",
+            "selected": false
+          },
+          {
+            "label": "Romania",
+            "value": "Romania",
+            "selected": false
+          },
+          {
+            "label": "Russian Federation",
+            "value": "Russian Federation",
+            "selected": false
+          },
+          {
+            "label": "Singapore",
+            "value": "Singapore",
+            "selected": false
+          },
+          {
+            "label": "South Africa",
+            "value": "South Africa",
+            "selected": false
+          },
+          {
+            "label": "South Korea",
+            "value": "South Korea",
+            "selected": false
+          },
+          {
+            "label": "Spain",
+            "value": "Spain",
+            "selected": false
+          },
+          {
+            "label": "Sweden",
+            "value": "Sweden",
+            "selected": false
+          },
+          {
+            "label": "Switzerland",
+            "value": "Switzerland",
+            "selected": false
+          },
+          {
+            "label": "Taiwan",
+            "value": "Taiwan",
+            "selected": false
+          },
+          {
+            "label": "Thailand",
+            "value": "Thailand",
+            "selected": false
+          },
+          {
+            "label": "Turkey",
+            "value": "Turkey",
+            "selected": false
+          },
+          {
+            "label": "Ukraine",
+            "value": "Ukraine",
+            "selected": false
+          },
+          {
+            "label": "United Kingdom",
+            "value": "United Kingdom",
+            "selected": false
+          },
+          {
+            "label": "United States",
+            "value": "United States",
+            "selected": false
+          },
+          {
+            "label": "Uruguay",
+            "value": "Uruguay",
+            "selected": false
+          },
+          {
+            "label": "Venezuela",
+            "value": "Venezuela",
+            "selected": false
+          },
+          {
+            "label": "Yugoslavia",
+            "value": "Yugoslavia",
+            "selected": false
+          }
+        ]
+      },
+      "type": 7
+    },
+    {
+      "name": "related.source_type",
+      "label": "Primary Supplier Source",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "1c3fd0de-14c7-8547-abef-7eb257147332",
+        "name": "related.source_type",
+        "type": 7,
+        "label": "Primary Supplier Source",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [
+          {
+            "label": "Make",
+            "value": "Make",
+            "selected": false
+          }
+        ],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "listStyle": 1,
+        "dataTypeTypeName": "List",
+        "dataType": 8,
+        "dataSource": "Make Buy",
+        "options": [
+          {
+            "label": "Make",
+            "value": "Make",
+            "selected": false
+          },
+          {
+            "label": "Buy",
+            "value": "Buy",
+            "selected": false
+          }
+        ]
+      },
+      "type": 7
+    },
+    {
+      "name": "related.logo",
+      "label": "Logo",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "6979ec9f-a27d-3031-7331-87a89c012f98",
+        "name": "related.logo",
+        "type": 9,
+        "label": "Logo",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Image",
+        "dataType": 11
+      },
+      "type": 9
+    },
+    {
+      "name": "related.contract",
+      "label": "Contract",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "4b9621d0-abad-10b7-d799-d443d98f26bd",
+        "name": "related.contract",
+        "type": 29,
+        "label": "Contract",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {
+            "name": "File",
+            "keyedName": "File"
+          },
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Item",
+        "dataType": 12,
+        "dataSource": "File",
+        "itemSource": "File"
+      },
+      "type": 29
+    },
+    {
+      "name": "related.custom_notes",
+      "label": "Seller Notes",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "4bea8b96-025d-bf82-2a4d-1efa9eae5665",
+        "name": "related.custom_notes",
+        "type": 17,
+        "label": "Seller Notes",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Formatted Text",
+        "dataType": 13,
+        "fieldType": 17
+      },
+      "type": 17
+    },
+    {
+      "name": "related.signature",
+      "label": "Signature",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "8b3b0343-1d3b-dfcb-a501-0106503e056c",
+        "name": "related.signature",
+        "type": 9,
+        "label": "Signature",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Image",
+        "dataType": 11
+      },
+      "type": 9
+    },
+    {
+      "name": "related.weight",
+      "label": "Weight",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "8442d09c-d4f6-8390-9d70-4fb2e13caf63",
+        "name": "related.weight",
+        "type": 1,
+        "label": "Weight",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [null],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Float",
+        "dataType": 4,
+        "pattern": null,
+        "scale": 2,
+        "precision": 3,
+        "length": 0,
+        "tempDate": ""
+      },
+      "type": 1
+    },
+    {
+      "name": "related.part",
+      "label": "Part",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "c489e5f9-66bf-23fc-c2ca-432c5a4cf692",
+        "name": "related.part",
+        "type": 29,
+        "label": "Part",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {
+            "name": "Part",
+            "keyedName": "Part"
+          },
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Item",
+        "dataType": 12,
+        "dataSource": "Part",
+        "itemSource": "Part"
+      },
+      "type": 29
+    },
+    {
+      "name": "related.is_active",
+      "label": "IsActive",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "7aed6b8a-3927-4524-4493-904d7860bda7",
+        "name": "related.is_active",
+        "type": 32,
+        "label": "IsActive",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Boolean",
+        "dataType": 10
+      },
+      "type": 32
+    },
+    {
+      "name": "related.totalweight",
+      "label": "TotalWeight",
+      "aggregateFunction": 0,
+      "aggregationValue": 0,
+      "width": "5",
+      "control": {
+        "id": "360d8ece-5419-0b54-c955-1b95eb7caaff",
+        "name": "related.totalweight",
+        "type": 1,
+        "label": "TotalWeight",
+        "selectionMode": 1,
+        "controls": [],
+        "rows": 4,
+        "visibleIf": [],
+        "showCaption": true,
+        "isDisable": false,
+        "alwaysEnabled": true,
+        "pageId": "",
+        "isActive": false,
+        "selectedDocuments": [],
+        "selectedItems": [],
+        "readOnly": false,
+        "orientationMode": 2,
+        "showLabel": true,
+        "validation": {
+          "type": 1,
+          "requiredCount": 0,
+          "requiredMaxCount": 0,
+          "message": "",
+          "resourceId": "",
+          "rule": []
+        },
+        "itemFilter": {
+          "itemType": {},
+          "search": "",
+          "relation": {},
+          "properties": [],
+          "levelSelection": 1,
+          "toType": "",
+          "configurationType": 1
+        },
+        "defaultValueExpression": "",
+        "values": [null],
+        "hasValidationErrors": false,
+        "numberDateFormatting": {
+          "formatSpecifier": "",
+          "locale": ""
+        },
+        "conditionalFormats": [],
+        "selectedStyleFormat": {
+          "rule": [],
+          "expressionString": "",
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "foregroundColor": "#ffffff",
+          "backgroundColor": "#000000"
+        },
+        "isPropertyControl": true,
+        "isContainerControl": false,
+        "isVisible": true,
+        "dataTypeTypeName": "Decimal",
+        "dataType": 5,
+        "pattern": null,
+        "scale": 2,
+        "precision": 4,
+        "length": 0,
+        "tempDate": ""
+      },
+      "type": 1
+    }
+  ]
+}

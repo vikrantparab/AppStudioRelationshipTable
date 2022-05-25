@@ -1,0 +1,103 @@
+table {
+  width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  /* max-width: 500px; */
+  width: 90%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color: rgba(0, 0, 0, 0);
+  height: 0 !important;
+}
+
+::ng-deep .mat-form-field-infix {
+  border: 0px;
+}
+
+::ng-deep .mat-select-arrow-wrapper {
+  display: block !important;
+}
+
+/* ::ng-deep .mat-datepicker-toggle-default-icon {
+  padding-bottom: 10.5px;
+}
+
+.mat-datepicker-align-item {
+  align-items: center !important;
+} */
+
+.example-card:hover .action-buttons {
+  opacity: 1;
+}
+
+.action-buttons {
+  color: #fff;
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: pointer;
+}
+
+::ng-deep .mat-form-field-flex {
+  padding: 0px !important;
+  /* align-items: center !important; */
+  /* width: 150px !important; */
+  /* background-color: #fff !important; */
+  /* height: 25px !important; */
+}
+
+::ng-deep .mat-form-field-infix {
+  padding: 0px !important;
+}
+
+/* ::ng-deep .td.mat-cell:first-of-type {
+  padding-left: 5px !important;
+} */
+
+::ng-deep tr.mat-row {
+  height: 30px !important;
+}
+
+::ng-deep td.mat-cell {
+  height: 30px !important;
+}
+
+::ng-deep .mat-form-field-infix {
+  /* background-color: #fff !important; */
+}
+
+mat-icon {
+  font-size: 18px;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.max-width100Per {
+  max-width: 100%;
+}
+
+.hidden {
+  display: none;
+}

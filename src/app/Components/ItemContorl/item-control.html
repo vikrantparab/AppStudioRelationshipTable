@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Item</h1>
+<div mat-dialog-content>
+  <ng-container>
+    <form class="item-control">
+      <mat-form-field
+        class="example-full-width"
+        appearance="fill"
+        style="width: 100% !important"
+      >
+        <input matInput [(ngModel)]="localData" name="item" id="item" />
+      </mat-form-field>
+    </form>
+  </ng-container>
+</div>
+<div mat-dialog-actions>
+  <button
+    style="margin-top: 20px"
+    mat-raised-button
+    [mat-dialog-close]="data"
+    (click)="doAction()"
+    cdkFocusInitial
+  >
+    Submit
+  </button>
+</div>
