@@ -12,11 +12,10 @@
       Toggle Readonly
     </mat-slide-toggle>
   </div>
-  <div class="overflow-y-scroll max-width100Per">
+  <div style="overflow: auto">
     <table
       mat-table
       [dataSource]="dataSource"
-      class="mat-elevation-z8"
       cdkDropList
       [cdkDropListData]="dataSource"
       (cdkDropListDropped)="dropTable($event)"
@@ -218,7 +217,6 @@
         cdkDrag
         [cdkDragData]="row"
       ></tr>
-      <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
     </table>
   </div>
 </mat-card>

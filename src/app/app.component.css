@@ -58,6 +58,10 @@ table {
   cursor: pointer;
 }
 
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: rgb(0 0 0 / 0%);
+}
+
 ::ng-deep .mat-form-field-flex {
   padding: 0px !important;
   /* align-items: center !important; */

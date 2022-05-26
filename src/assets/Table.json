@@ -142,7 +142,34 @@
           "formatSpecifier": "",
           "locale": ""
         },
-        "conditionalFormats": [],
+        "conditionalFormats": [
+          {
+            "rule": [
+              {
+                "operator": 5,
+                "values": ["1.2"],
+                "field": {
+                  "id": "7828bfa0-ab99-9c22-5734-379e5317a1d2",
+                  "parentId": "",
+                  "rowNumber": 0,
+                  "colNumber": 0
+                },
+                "logicalOperator": {
+                  "1": "And",
+                  "2": "Or",
+                  "And": 1,
+                  "Or": 2
+                }
+              }
+            ],
+            "expressionString": "{weight} GreaterThan 1.2 ",
+            "bold": true,
+            "italic": false,
+            "underline": false,
+            "foregroundColor": "#ad4141",
+            "backgroundColor": "#dee04e"
+          }
+        ],
         "selectedStyleFormat": {
           "rule": [],
           "expressionString": "",

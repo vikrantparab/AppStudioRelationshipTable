@@ -8,6 +8,7 @@ import { ItemDialog } from "./Components/ItemContorl/item-control";
 import * as tableConfig from "../assets/Table.json";
 import * as tableDataArray from "../assets/DataArray.json";
 import * as relMetadata from "../assets/RelationshipMetaData.json";
+import * as _ from "lodash";
 import { ControlType, DataType } from "src/assets/enum";
 import { MatTable } from "@angular/material/table";
 import { generateGuidId, getDiffObjects } from "./_util/util.service";
@@ -32,13 +33,7 @@ export class AppComponent implements OnInit {
   rootDataSource: any;
   newTableColumns: any;
   readOnly = true;
-  ignoredProps = [
-    "id",
-    "action",
-    "relatedItemId",
-    "relationshipType",
-    "relatedItemType",
-  ];
+  ignoredProps = ["id", "action", "related.id", "type", "related.type"];
 
   constructor(public dialog: MatDialog) {}
 
@@ -87,8 +82,8 @@ export class AppComponent implements OnInit {
           let matchedKeys = Object.keys(element.properties).filter(
             (key) => this.displayedColumns.indexOf(key) != -1
           );
+          // Relationship properties implementation pending
         }
-
         if (element.relatedItem && element.relatedItem.properties) {
           let matchedKeys = Object.keys(element.relatedItem.properties).filter(
             (key) => this.displayedColumns.indexOf("related." + key) != -1
@@ -117,12 +112,12 @@ export class AppComponent implements OnInit {
           });
         }
         dataSourceObj["id"] = element.id;
-        dataSourceObj["relatedItemId"] = element.relatedItem.id;
-        dataSourceObj["relationshipType"] = element.type;
-        dataSourceObj["relatedItemType"] = element.relatedItem.type;
+        dataSourceObj["related.id"] = element.relatedItem.id;
+        dataSourceObj["type"] = element.type;
+        dataSourceObj["related.type"] = element.relatedItem.type;
         dataSourceObj["readOnly"] = true;
         dataSourceObj["action"] = { type: "action" };
-        console.log(dataSourceObj);
+
         if (Object.keys(dataSourceObj)) this.dataSource.push(dataSourceObj);
       });
     }
@@ -261,7 +256,55 @@ export class AppComponent implements OnInit {
 
   saveRelationshipData() {
     var differentialDataSource = this.evaluateDifference();
+    const apiRes = this.mapDataSourceToApiResponse(differentialDataSource);
     // Add a mapper to map dataSource to API response
+    console.log(apiRes);
+  }
+
+  mapDataSourceToApiResponse(differentialDataSource: any[]) {
+    const excludedProps = ["id", "type", "action"];
+    return differentialDataSource.map((d) => {
+      let item: any = { properties: {}, relatedItem: { properties: {} } };
+      Object.keys(d).forEach((key) => {
+        if (key === "action") {
+          const actionValue: any = d[key].value;
+          item = { ...item, action: actionValue ? actionValue : "update" };
+        } else if (key.includes("related.")) {
+          const property = key.split(".")[1];
+          if (excludedProps.includes(property)) {
+            item.relatedItem = {
+              ...item.relatedItem,
+              [property]: this.setPropertyValue(d, key),
+            };
+          } else {
+            item.relatedItem = {
+              properties: {
+                ...item.relatedItem.properties,
+                [property]: this.setPropertyValue(d, key),
+              },
+            };
+          }
+        } else {
+          if (excludedProps.includes(key)) {
+            item = {
+              ...item,
+              [key]: this.setPropertyValue(d, key),
+            };
+          } else {
+            item.properties = {
+              ...item.properties,
+              [key]: this.setPropertyValue(d, key),
+            };
+          }
+        }
+      });
+
+      return item;
+    });
+  }
+
+  setPropertyValue(d, key) {
+    return _.has(d[key], "value") ? d[key].value : d[key];
   }
 
   evaluateDifference() {
@@ -287,7 +330,7 @@ export class AppComponent implements OnInit {
       } else finalJson.push(d);
     });
 
-    console.log(finalJson);
+    return finalJson;
   }
 
   addNewItem() {

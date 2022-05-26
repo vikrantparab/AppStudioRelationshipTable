@@ -62,3 +62,13 @@ function getHexaDigit() {
     .toString(16)
     .toLowerCase();
 }
+
+export function createStyledText(stylingProperties: any) {
+  const { backgroundColor, foregroundColor, underline, italic, bold } =
+    stylingProperties;
+  return `background-color: ${backgroundColor}; color: ${foregroundColor}; font-weight: ${
+    bold ? "bold" : ""
+  }; font-style: ${italic ? "italic" : ""}; text-decoration: ${
+    underline ? "underline" : ""
+  };`;
+}
