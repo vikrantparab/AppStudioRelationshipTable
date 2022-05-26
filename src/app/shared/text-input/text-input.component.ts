@@ -10,6 +10,8 @@ export class TextInputComponent implements OnInit {
   @Input() value: string = "";
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
   @Input() readOnly: boolean = false;
+  @Input() conditionalFormatting: any;
+  @Input() rowData: any;
   constructor() {}
 
   ngOnInit(): void {}
