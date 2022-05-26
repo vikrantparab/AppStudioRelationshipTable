@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
-import { FormControl } from "@angular/forms";
+import { random } from "lodash";
 import { MatSort, Sort } from "@angular/material/sort";
 import { MatDialog } from "@angular/material/dialog";
 import { FloaraEditorDialog } from "./Components/FloaraEditorDialog/floara-editor-dialog.component";
@@ -10,7 +10,7 @@ import * as tableDataArray from "../assets/DataArray.json";
 import * as relMetadata from "../assets/RelationshipMetaData.json";
 import { ControlType, DataType } from "src/assets/enum";
 import { MatTable } from "@angular/material/table";
-import { getDiffObjects, getDiffProperties } from "./_util/util.service";
+import { generateGuidId, getDiffObjects } from "./_util/util.service";
 
 @Component({
   selector: "app-root",
@@ -32,7 +32,13 @@ export class AppComponent implements OnInit {
   rootDataSource: any;
   newTableColumns: any;
   readOnly = true;
-  ignoredProps = ["id", "action"];
+  ignoredProps = [
+    "id",
+    "action",
+    "relatedItemId",
+    "relationshipType",
+    "relatedItemType",
+  ];
 
   constructor(public dialog: MatDialog) {}
 
@@ -88,18 +94,18 @@ export class AppComponent implements OnInit {
             (key) => this.displayedColumns.indexOf("related." + key) != -1
           );
           matchedKeys.forEach((matchedKey) => {
-            let matchedMetadataProperty = this.REL_METADATA.relatedItem.properties.find(
-              (ele) => ele.name == matchedKey
-            );
+            let matchedMetadataProperty =
+              this.REL_METADATA.relatedItem.properties.find(
+                (ele) => ele.name == matchedKey
+              );
             let propertyValue = element.relatedItem.properties[matchedKey];
             dataSourceObj["related." + matchedKey] = { value: propertyValue };
             let matchedControl = this.dataSourceModel["related." + matchedKey];
             let controlType = matchedControl.type;
             let controlDataType = matchedControl.dataType;
             dataSourceObj["related." + matchedKey]["type"] = controlType;
-            dataSourceObj["related." + matchedKey][
-              "dataType"
-            ] = controlDataType;
+            dataSourceObj["related." + matchedKey]["dataType"] =
+              controlDataType;
 
             if (
               matchedControl.dataType == DataType.List ||
@@ -110,6 +116,10 @@ export class AppComponent implements OnInit {
             }
           });
         }
+        dataSourceObj["id"] = element.id;
+        dataSourceObj["relatedItemId"] = element.relatedItem.id;
+        dataSourceObj["relationshipType"] = element.type;
+        dataSourceObj["relatedItemType"] = element.relatedItem.type;
         dataSourceObj["readOnly"] = true;
         dataSourceObj["action"] = { type: "action" };
         console.log(dataSourceObj);
@@ -215,7 +225,10 @@ export class AppComponent implements OnInit {
 
   onRowEditStart(element: any) {
     const updatedProps = {
-      action: { ...element.action, value: "update" },
+      action:
+        element.action.value !== "add"
+          ? { ...element.action, value: "update" }
+          : element.action,
       readOnly: false,
     };
     this.dataSource = this.updateDataSource(element, updatedProps);
@@ -224,7 +237,6 @@ export class AppComponent implements OnInit {
 
   onRowEditDone(element: any) {
     const updatedProps = {
-      action: { ...element.action, value: "update" },
       readOnly: true,
     };
     this.dataSource = this.updateDataSource(element, updatedProps);
@@ -247,6 +259,11 @@ export class AppComponent implements OnInit {
     return this.dataSource;
   }
 
+  saveRelationshipData() {
+    var differentialDataSource = this.evaluateDifference();
+    // Add a mapper to map dataSource to API response
+  }
+
   evaluateDifference() {
     const diffIds: string[] = getDiffObjects(
       this.rootDataSource,
@@ -265,11 +282,31 @@ export class AppComponent implements OnInit {
       d = { ...d, action: d.action === "" ? "update" : d.action };
       const orgObj = origObjects.find((o: any) => o.id === d.id);
       if (orgObj) {
-        const diffProps = getDiffProperties(orgObj, d, this.ignoredProps);
+        const diffProps = getDiffObjects(orgObj, d, this.ignoredProps);
         finalJson.push(diffProps);
       } else finalJson.push(d);
     });
 
     console.log(finalJson);
+  }
+
+  addNewItem() {
+    const recordCount = this.dataSource.length;
+    const existingIndex = random(0, recordCount - 1, false);
+    const newItem: any = JSON.parse(
+      JSON.stringify(this.dataSource[existingIndex])
+    );
+    this.dataSource = [
+      ...this.dataSource,
+      {
+        ...newItem,
+        id: generateGuidId(),
+        index: recordCount,
+        readOnly: true,
+        action: { type: "action", value: "add" },
+      },
+    ];
+
+    this.table.renderRows();
   }
 }

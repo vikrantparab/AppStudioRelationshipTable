@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { MatSliderModule } from "@angular/material/slider";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { AppComponent } from "./app.component";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { MatTableModule } from "@angular/material/table";
@@ -47,6 +48,8 @@ import { ImageRendererComponent } from "./shared/image-renderer/image-renderer.c
     MatSortModule,
     MatIconModule,
     MatButtonModule,
+    MatSliderModule,
+    MatSlideToggleModule,
     FormsModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),

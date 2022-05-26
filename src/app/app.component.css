@@ -101,3 +101,15 @@ mat-icon {
 .hidden {
   display: none;
 }
+
+mat-card,
+div {
+  padding-bottom: 10px;
+}
+
+.table-controls {
+  display: flex;
+  column-gap: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+}
