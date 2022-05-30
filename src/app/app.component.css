@@ -27,12 +27,16 @@ table {
 
 ::ng-deep .mat-form-field-infix {
   border: 0px;
+  /* width: 0px !important; */
 }
 
 ::ng-deep .mat-select-arrow-wrapper {
   display: block !important;
 }
 
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
 /* ::ng-deep .mat-datepicker-toggle-default-icon {
   padding-bottom: 10.5px;
 }
@@ -70,10 +74,6 @@ table {
   /* height: 25px !important; */
 }
 
-::ng-deep .mat-form-field-infix {
-  padding: 0px !important;
-}
-
 /* ::ng-deep .td.mat-cell:first-of-type {
   padding-left: 5px !important;
 } */
@@ -84,10 +84,6 @@ table {
 
 ::ng-deep td.mat-cell {
   height: 30px !important;
-}
-
-::ng-deep .mat-form-field-infix {
-  /* background-color: #fff !important; */
 }
 
 mat-icon {
@@ -104,11 +100,6 @@ mat-icon {
 
 .hidden {
   display: none;
-}
-
-mat-card,
-div {
-  padding-bottom: 10px;
 }
 
 .table-controls {

@@ -1,1 +1,23 @@
-<img [src]="value" alt="image_url">
+<div>
+  <img mat-card-sm-image [src]="value" *ngIf="value" />
+  <!-- <div class="action-buttons" [style.display]="value ? 'block' : 'none'">
+    <mat-icon
+      aria-hidden="false"
+      (click)="onImagePickerDialog()"
+      *ngIf="!readOnly"
+    >
+      file_upload</mat-icon
+    >
+    <mat-icon aria-hidden="false" *ngIf="!readOnly"> file_download</mat-icon>
+    <mat-icon aria-hidden="false" *ngIf="!readOnly"> delete</mat-icon>
+  </div> -->
+
+  <mat-icon
+    [style.display]="value ? 'none' : 'block'"
+    aria-hidden="false"
+    (click)="onImagePickerDialog()"
+    *ngIf="!readOnly"
+  >
+    file_upload</mat-icon
+  >
+</div>
