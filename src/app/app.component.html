@@ -26,7 +26,13 @@
         [matColumnDef]="column"
         *ngFor="let column of displayedColumns"
       >
-        <th mat-header-cell mat-sort-header *matHeaderCellDef cdkDrag>
+        <th
+          mat-header-cell
+          mat-sort-header
+          *matHeaderCellDef
+          cdkDrag
+          [title]="displayedColumnsLabels[column]"
+        >
           {{ displayedColumnsLabels[column] }}
         </th>
         <td mat-cell *matCellDef="let element; let i = index">

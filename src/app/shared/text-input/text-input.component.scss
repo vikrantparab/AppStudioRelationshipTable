@@ -1,21 +1,13 @@
-mat-form-field {
-  min-height: 45px !important;
-  display: flex;
-  align-items: center;
-  width: 100px;
-  padding-right: 10px;
+input {
+  max-width: 98%;
+  border: 0px solid;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  padding: 0px;
+}
 
-  input {
-    width: 100px;
-  }
-  p {
-    max-width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-  }
+input:focus-visible {
+  outline: #c1c1c1 auto 1px;
+  margin: 0px;
+  padding: 4px;
 }

@@ -1,9 +1,10 @@
-<p *ngIf="readOnly">{{ value }}</p>
-<mat-form-field *ngIf="!readOnly">
-  <mat-select [(value)]="value" (selectionChange)="onValueUpdate($event)">
-    <mat-option></mat-option>
-    <mat-option [value]="option.value" *ngFor="let option of options">{{
-      option.value
-    }}</mat-option>
-  </mat-select>
-</mat-form-field>
+<div *ngIf="readOnly">{{ value }}</div>
+<select
+  [(value)]="value"
+  (change)="onValueUpdate($event.target)"
+  *ngIf="!readOnly"
+>
+  <option *ngFor="let option of options" [ngValue]="option.value">
+    {{ option.value }}
+  </option>
+</select>

@@ -1,11 +1,8 @@
-<p *ngIf="readOnly">{{ value }}</p>
+<div *ngIf="readOnly">{{ value }}</div>
 
-<mat-form-field class="example-full-width" *ngIf="!readOnly">
-  <mat-label>{{ label }}</mat-label>
-  <input
-    matInput
-    [placeholder]="label"
-    [(ngModel)]="value"
-    (change)="onValueUpdate($event)"
-  />
-</mat-form-field>
+<input
+  *ngIf="!readOnly"
+  [placeholder]="label"
+  [(ngModel)]="value"
+  (change)="onValueUpdate($event)"
+/>

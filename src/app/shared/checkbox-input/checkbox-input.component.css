@@ -1,0 +1,18 @@
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgb(0, 77, 192) !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: rgb(0, 77, 192) !important;
+}
+
+::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: rgb(0, 77, 192) !important;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}

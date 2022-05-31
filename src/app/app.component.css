@@ -8,9 +8,9 @@ table {
   width: 90%;
 }
 
-.example-full-width {
+/* .example-full-width {
   width: 100%;
-}
+} */
 
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
   background-color: rgba(0, 0, 0, 0);
@@ -27,7 +27,7 @@ table {
 
 ::ng-deep .mat-form-field-infix {
   border: 0px;
-  /* width: 0px !important; */
+  width: 0px !important;
 }
 
 ::ng-deep .mat-select-arrow-wrapper {
@@ -66,17 +66,51 @@ table {
   background-color: rgb(0 0 0 / 0%);
 }
 
+::ng-deep tr.mat-header-row {
+  height: 30px !important;
+}
+
+::ng-deep th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+table,
+th,
+td {
+  border: 1px solid #b0b0b0 !important;
+  border-collapse: collapse !important;
+}
+
+table th {
+  background-color: #dbdbdb;
+}
+
+table td {
+  max-width: 100px !important;
+}
+
+::ng-deep .mat-sort-header-button {
+  width: 96px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+::ng-deep .mat-sort-header-button {
+  display: table-column-group !important;
+}
+
 ::ng-deep .mat-form-field-flex {
   padding: 0px !important;
   /* align-items: center !important; */
-  /* width: 150px !important; */
+  width: 0px !important;
+  display: grid !important;
   /* background-color: #fff !important; */
   /* height: 25px !important; */
 }
-
-/* ::ng-deep .td.mat-cell:first-of-type {
-  padding-left: 5px !important;
-} */
 
 ::ng-deep tr.mat-row {
   height: 30px !important;

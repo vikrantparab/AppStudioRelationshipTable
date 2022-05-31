@@ -1,11 +1,14 @@
-<p *ngIf="readOnly">{{ value | date: "M/dd/yyyy" }}</p>
-<mat-form-field class="example-full-width" *ngIf="!readOnly">
-  <input
-    matInput
-    [matDatepicker]="picker3"
-    [(ngModel)]="value"
-    (dateChange)="onValueUpdate($event)"
-  />
-  <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-  <mat-datepicker #picker3></mat-datepicker>
-</mat-form-field>
+<div class="date-container">
+  <div>{{ value | date: "M/dd/yyyy" }}</div>
+
+  <mat-form-field appearance="fill" *ngIf="!readOnly">
+    <input
+      matInput
+      [matDatepicker]="picker"
+      [(ngModel)]="value"
+      (dateChange)="onValueUpdate($event)"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
