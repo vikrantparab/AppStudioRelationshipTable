@@ -52,7 +52,6 @@
     "ng2-dragula": "^2.1.1",
     "ngx-color-picker": "^9.1.0",
     "ngx-device-detector": "^1.4.2",
-    "ngx-mydatepicker": "^2.4.10",
     "ngx-toastr": "^13.0.0",
     "protractor": "~5.4.3",
     "signature_pad": "^3.0.0-beta.3",

@@ -23,8 +23,8 @@ import { FormsModule } from "@angular/forms";
 import { TextInputComponent } from "./shared/text-input/text-input.component";
 import { SelectInputComponent } from "./shared/select-input/select-input.component";
 import { ImageRendererComponent } from "./shared/image-renderer/image-renderer.component";
-import { DateInputComponent } from './shared/date-input/date-input.component';
-import { CheckboxInputComponent } from './shared/checkbox-input/checkbox-input.component';
+import { DateInputComponent } from "./shared/date-input/date-input.component";
+import { CheckboxInputComponent } from "./shared/checkbox-input/checkbox-input.component";
 
 @NgModule({
   declarations: [

@@ -1,17 +1,4 @@
 <mat-card>
-  <div class="table-controls">
-    <button mat-flat-button color="primary" (click)="addNewItem()">Add</button>
-    <button mat-flat-button color="accent" (click)="saveRelationshipData()">
-      Save
-    </button>
-    <mat-slide-toggle
-      class="example-margin"
-      [checked]="readOnly"
-      (toggleChange)="toggleReadOnly(!readOnly)"
-    >
-      Toggle Readonly
-    </mat-slide-toggle>
-  </div>
   <div style="overflow: auto">
     <table
       mat-table
@@ -39,14 +26,14 @@
           <ng-container *ngIf="element[column].type == CONTROL_TYPE.Text">
             <app-text-input
               [(value)]="element[column].value"
-              [readOnly]="element['readOnly']"
+              [readOnly]="readOnly"
             ></app-text-input>
           </ng-container>
 
           <ng-container *ngIf="element[column].type == CONTROL_TYPE.DropDown">
             <app-list-input
               [(value)]="element[column].value"
-              [readOnly]="element['readOnly']"
+              [readOnly]="readOnly"
               [options]="element[column].options"
             ></app-list-input>
           </ng-container>
@@ -54,14 +41,14 @@
           <ng-container *ngIf="element[column].type == CONTROL_TYPE.Date">
             <app-date-input
               [(value)]="element[column].value"
-              [readOnly]="element['readOnly']"
+              [readOnly]="readOnly"
             ></app-date-input>
           </ng-container>
 
           <ng-container *ngIf="element[column].type == CONTROL_TYPE.CheckBox">
             <app-checkbox-input
               [(value)]="element[column].value"
-              [readOnly]="element['readOnly']"
+              [readOnly]="readOnly"
             ></app-checkbox-input>
           </ng-container>
 
@@ -69,7 +56,7 @@
           <ng-container *ngIf="element[column].type == CONTROL_TYPE.Image">
             <app-image-renderer
               [(value)]="element[column].value"
-              [readOnly]="element['readOnly']"
+              [readOnly]="readOnly"
             ></app-image-renderer>
           </ng-container>
 
@@ -155,15 +142,20 @@
           </ng-container>
 
           <ng-container *ngIf="element[column].type == 'action'">
-            <a (click)="onRowEditStart(element)" *ngIf="element.readOnly">
-              <span class="material-icons">edit</span>
-            </a>
-            <a (click)="onRowEditDone(element)" *ngIf="!element.readOnly">
-              <span class="material-icons">done</span>
-            </a>
-            <a (click)="onRowDelete(element)">
-              <span class="material-icons">delete</span>
-            </a>
+            <div class="action-buttons-container">
+              <a
+                (click)="addNewItem(element.index)"
+                [ngClass]="{ disabled: readOnly, enabled: !readOnly }"
+              >
+                <span class="material-icons"> add </span>
+              </a>
+              <a
+                (click)="onRowDelete(element)"
+                [ngClass]="{ disabled: readOnly, enabled: !readOnly }"
+              >
+                <span class="material-icons">delete</span>
+              </a>
+            </div>
           </ng-container>
         </td>
         <td mat-footer-cell *matFooterCellDef>
@@ -184,3 +176,15 @@
     </table>
   </div>
 </mat-card>
+<div class="table-controls">
+  <button mat-flat-button color="accent" (click)="saveRelationshipData()">
+    Save
+  </button>
+  <mat-slide-toggle
+    class="example-margin"
+    [checked]="readOnly"
+    (toggleChange)="toggleReadOnly(!readOnly)"
+  >
+    Toggle Readonly
+  </mat-slide-toggle>
+</div>

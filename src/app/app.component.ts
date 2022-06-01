@@ -33,7 +33,14 @@ export class AppComponent implements OnInit {
   rootDataSource: any;
   newTableColumns: any;
   readOnly = true;
-  ignoredProps = ["id", "action", "related.id", "type", "related.type"];
+  ignoredProps = [
+    "id",
+    "readOnly",
+    "action",
+    "related.id",
+    "type",
+    "related.type",
+  ];
 
   constructor(public dialog: MatDialog) {}
 
@@ -44,7 +51,6 @@ export class AppComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log("res: ", result);
       this.dataSource[index].Richtext.data = result || "";
     });
   }
@@ -76,7 +82,7 @@ export class AppComponent implements OnInit {
       this.displayedColumnsLabels["action"] = "Actions";
       console.log(this.displayedColumns);
 
-      this.TABLE_DATA_ARRAY.forEach((element) => {
+      this.TABLE_DATA_ARRAY.forEach((element, index) => {
         let dataSourceObj = {};
         if (element.properties) {
           let matchedKeys = Object.keys(element.properties).filter(
@@ -115,7 +121,7 @@ export class AppComponent implements OnInit {
         dataSourceObj["related.id"] = element.relatedItem.id;
         dataSourceObj["type"] = element.type;
         dataSourceObj["related.type"] = element.relatedItem.type;
-        dataSourceObj["readOnly"] = true;
+        dataSourceObj["index"] = index;
         dataSourceObj["action"] = { type: "action" };
 
         if (Object.keys(dataSourceObj)) this.dataSource.push(dataSourceObj);
@@ -128,15 +134,16 @@ export class AppComponent implements OnInit {
   dropTable(event: CdkDragDrop<string[]>) {
     const prevIndex = this.dataSource.findIndex((d) => d === event.item.data);
     moveItemInArray(this.dataSource, prevIndex, event.currentIndex);
+    this.dataSource = this.updateIndexes(this.dataSource);
     this.table.renderRows();
   }
 
   toggleReadOnly(isReadOnly) {
     this.readOnly = isReadOnly;
-    this.dataSource.forEach((item) => {
-      item["readOnly"] = isReadOnly;
-    });
-    console.log(this.dataSource);
+    // this.dataSource.forEach((item) => {
+    //   item["readOnly"] = isReadOnly;
+    // });
+    // console.log(this.dataSource);
   }
 
   onImagePickerDialog(elementColumnObj) {
@@ -227,6 +234,7 @@ export class AppComponent implements OnInit {
       readOnly: false,
     };
     this.dataSource = this.updateDataSource(element, updatedProps);
+    this.dataSource = this.updateIndexes(this.dataSource);
     this.table.renderRows();
   }
 
@@ -235,26 +243,26 @@ export class AppComponent implements OnInit {
       readOnly: true,
     };
     this.dataSource = this.updateDataSource(element, updatedProps);
+    this.dataSource = this.updateIndexes(this.dataSource);
     this.table.renderRows();
   }
 
   onRowDelete(element: any) {
     const updatedProps = { action: { ...element.action, value: "delete" } };
     this.dataSource = this.updateDataSource(element, updatedProps);
+    this.dataSource = this.updateIndexes(this.dataSource);
     this.table.renderRows();
   }
 
   updateDataSource(element: any, updatedProps: any) {
-    const prevIndex = this.dataSource.findIndex((d) => d === element);
-    this.dataSource.splice(prevIndex, 1);
-
     const updatedObject = { ...element, ...updatedProps };
-    this.dataSource.splice(prevIndex, 0, updatedObject); // insert at specific index
+    this.dataSource[element.index] = updatedObject; // insert at specific index
 
     return this.dataSource;
   }
 
   saveRelationshipData() {
+    this.dataSource = this.updateIndexes(this.dataSource);
     var differentialDataSource = this.evaluateDifference();
     const apiRes = this.mapDataSourceToApiResponse(differentialDataSource);
     // Add a mapper to map dataSource to API response
@@ -304,7 +312,9 @@ export class AppComponent implements OnInit {
   }
 
   setPropertyValue(d, key) {
-    return _.has(d[key], "value") ? d[key].value : d[key];
+    return _.has(d[key], "value") || typeof d[key] == "object"
+      ? d[key].value
+      : d[key];
   }
 
   evaluateDifference() {
@@ -333,23 +343,44 @@ export class AppComponent implements OnInit {
     return finalJson;
   }
 
-  addNewItem() {
-    const recordCount = this.dataSource.length;
-    const existingIndex = random(0, recordCount - 1, false);
-    const newItem: any = JSON.parse(
-      JSON.stringify(this.dataSource[existingIndex])
-    );
-    this.dataSource = [
-      ...this.dataSource,
-      {
-        ...newItem,
-        id: generateGuidId(),
-        index: recordCount,
-        readOnly: true,
-        action: { type: "action", value: "add" },
-      },
-    ];
+  addNewItem(existingIndex: any) {
+    const newIndex = existingIndex + 1;
+
+    const newItem = this.createEmptyRow(this.dataSource[0], newIndex);
+
+    this.dataSource.splice(newIndex, 0, newItem);
+
+    this.dataSource = this.updateIndexes(this.dataSource);
 
     this.table.renderRows();
+  }
+
+  updateIndexes(dataSource: any[]) {
+    return dataSource.map((item, index) => {
+      if (item.index !== index) {
+        return { ...item, index };
+      } else return item;
+    });
+  }
+
+  createEmptyRow(sampleRow: any, index: any) {
+    const newItem = {
+      id: generateGuidId(),
+      index: index,
+      action: { type: "action", value: "add" },
+    };
+
+    let dummyRow = {};
+
+    Object.keys(sampleRow).forEach((key: any) => {
+      if (typeof sampleRow[key] == "object") {
+        const { ["value"]: omitted, ...rest } = sampleRow[key];
+        dummyRow[key] = rest;
+      } else dummyRow[key] = sampleRow[key];
+    });
+
+    dummyRow = { ...dummyRow, ...newItem };
+
+    return dummyRow;
   }
 }
