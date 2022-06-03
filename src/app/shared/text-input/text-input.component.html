@@ -1,4 +1,4 @@
-<div *ngIf="readOnly">{{ value }}</div>
+<div *ngIf="readOnly" [ngStyle]="applyConditionalFormatting()">{{ value }}</div>
 
 <input
   *ngIf="!readOnly"

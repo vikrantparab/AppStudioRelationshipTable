@@ -4,11 +4,9 @@
       "rule": [
         {
           "operator": 5,
-          "values": [
-            "1.2"
-          ],
+          "values": ["1.2"],
           "field": {
-            "id": "7828bfa0-ab99-9c22-5734-379e5317a1d2",
+            "id": "8442d09c-d4f6-8390-9d70-4fb2e13caf63",
             "parentId": "",
             "rowNumber": 0,
             "colNumber": 0
@@ -22,11 +20,9 @@
         },
         {
           "operator": 1,
-          "values": [
-            "12"
-          ],
+          "values": ["12"],
           "field": {
-            "id": "0610cf13-833e-ee04-e2a9-72c034a7ae91",
+            "id": "bf6ee05e-6d12-9f6d-4edb-d0433aebcc9c",
             "parentId": "",
             "rowNumber": 0,
             "colNumber": 0
@@ -45,9 +41,7 @@
       "rule": [
         {
           "operator": 2,
-          "values": [
-            "1"
-          ],
+          "values": ["1"],
           "field": {
             "id": "7828bfa0-ab99-9c22-5734-379e5317a1d2",
             "parentId": "",

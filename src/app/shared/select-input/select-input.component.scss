@@ -2,4 +2,9 @@ select {
   width: 100%;
   margin: 0px;
   padding: 4px;
+  border: 0px solid;
+}
+
+select:focus-visible {
+  outline: #c1c1c1 auto 1px;
 }

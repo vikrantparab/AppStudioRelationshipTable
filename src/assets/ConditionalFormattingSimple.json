@@ -4,11 +4,9 @@
       "rule": [
         {
           "operator": 5,
-          "values": [
-            "1.2"
-          ],
+          "values": ["1.2"],
           "field": {
-            "id": "7828bfa0-ab99-9c22-5734-379e5317a1d2",
+            "id": "8442d09c-d4f6-8390-9d70-4fb2e13caf63",
             "parentId": "",
             "rowNumber": 0,
             "colNumber": 0
@@ -23,8 +21,8 @@
       ],
       "expressionString": "{weight} GreaterThan 1.2 ",
       "bold": true,
-      "italic": false,
-      "underline": false,
+      "italic": true,
+      "underline": true,
       "foregroundColor": "#ad4141",
       "backgroundColor": "#dee04e"
     }

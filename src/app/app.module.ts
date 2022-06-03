@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { MatTableModule } from "@angular/material/table";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { MatDatepickerModule } from "@angular/material/datepicker";
@@ -42,6 +43,7 @@ import { CheckboxInputComponent } from "./shared/checkbox-input/checkbox-input.c
     NoopAnimationsModule,
     MatTableModule,
     DragDropModule,
+    FlexLayoutModule,
     MatInputModule,
     MatSelectModule,
     MatDatepickerModule,

@@ -1,7 +1,6 @@
-<div class="date-container">
-  <div>{{ value | date: "M/dd/yyyy" }}</div>
-
-  <mat-form-field appearance="fill" *ngIf="!readOnly">
+<div *ngIf="readOnly">{{ value | date: "M/dd/yyyy" }}</div>
+<div>
+  <mat-form-field *ngIf="!readOnly">
     <input
       matInput
       [matDatepicker]="picker"

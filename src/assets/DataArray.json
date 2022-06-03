@@ -9,21 +9,12 @@
       "id": "0BE02EBFAFA84F339CCC80553CA1174A",
       "type": "as_DemoItem",
       "properties": {
-        "classification": "Electrical/Assembly",
-        "contact_number": "9840667959",
-        "contract": "1B41BBCE1A2A4B8B9F43066688CC654E",
-        "custom_notes": "<html>\r\n<head></head>\r\n<body >\r\n<strike>Test </strike>1 @ <u>dskdls</u></body>\r\n</html>",
-        "is_active": true,
-        "locations": "Spain",
-        "logo": null,
-        "max_quantity": 1,
-        "on_board": "2022-05-24T00:00:00",
-        "part": "9656CF7EDFE04B1AAA0299F1D56AB666",
-        "signature": null,
-        "source_type": "Make",
         "supplier_name": "Sup1",
-        "totalweight": 12.3,
-        "weight": "1234.56789"
+        "on_board": "2022-05-24T00:00:00",
+        "contact_number": "9840667959",
+        "max_quantity": 1,
+        "locations": "Spain",
+        "source_type": "Make"
       }
     }
   },
@@ -37,21 +28,12 @@
       "id": "0BE02EBFAFA84F339CCC80553CA1174B",
       "type": "as_DemoItem",
       "properties": {
-        "classification": "Electrical/Assembly",
-        "contact_number": "9840667959",
-        "contract": "1B41BBCE1A2A4B8B9F43066688CC654E",
-        "custom_notes": "<html>\r\n<head></head>\r\n<body >\r\n<strike>Test </strike>1 @ <u>dskdls</u></body>\r\n</html>",
-        "is_active": true,
-        "locations": "Albania",
-        "logo": null,
-        "max_quantity": 1,
-        "on_board": "2022-05-24T00:00:00",
-        "part": "9656CF7EDFE04B1AAA0299F1D56AB666",
-        "signature": null,
-        "source_type": "Buy",
-        "supplier_name": "Sup1",
-        "totalweight": 12.3,
-        "weight": "1234.56789"
+        "supplier_name": "Sup2",
+        "on_board": "2022-03-24T00:00:00",
+        "contact_number": "9869575139",
+        "max_quantity": 4,
+        "locations": "Spain",
+        "source_type": "Buy"
       }
     }
   }

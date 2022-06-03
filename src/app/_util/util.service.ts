@@ -72,3 +72,21 @@ export function createStyledText(stylingProperties: any) {
     underline ? "underline" : ""
   };`;
 }
+
+export enum LogicalOperators {
+  And = 1,
+  Or = 2,
+}
+
+export enum Operators {
+  Contains = 1,
+  EqualTo = 2,
+  NotEqualTo = 3,
+  LessThan = 4,
+  GreaterThan = 5,
+  LessThanEqualTo = 6,
+  GreaterThanEqualTo = 7,
+  StartsWith = 8,
+  EndsWith = 9,
+  Between = 10,
+}

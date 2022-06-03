@@ -5,9 +5,11 @@ import { MatSort, Sort } from "@angular/material/sort";
 import { MatDialog } from "@angular/material/dialog";
 import { FloaraEditorDialog } from "./Components/FloaraEditorDialog/floara-editor-dialog.component";
 import { ItemDialog } from "./Components/ItemContorl/item-control";
-import * as tableConfig from "../assets/Table.json";
+// import * as tableConfig from "../assets/Table.json";
+import * as tableConfig from "../assets/TableLess.json";
 import * as tableDataArray from "../assets/DataArray.json";
 import * as relMetadata from "../assets/RelationshipMetaData.json";
+import * as ConditionalFormatting from "../assets/ConditionalFormattingSimple.json";
 import * as _ from "lodash";
 import { ControlType, DataType } from "src/assets/enum";
 import { MatTable } from "@angular/material/table";
@@ -26,6 +28,7 @@ export class AppComponent implements OnInit {
   TABLE_CONFIG: any = (tableConfig as any).default;
   TABLE_DATA_ARRAY: any = (tableDataArray as any).default;
   REL_METADATA: any = (relMetadata as any).default;
+  CONDITIONAL_FORMATTING: any = (ConditionalFormatting as any).default;
   displayedColumns: string[] = [];
   displayedColumnsLabels: any = {};
   dataSourceModel: any = {};
@@ -33,6 +36,7 @@ export class AppComponent implements OnInit {
   rootDataSource: any;
   newTableColumns: any;
   readOnly = true;
+  columnIdToNameMap = {};
   ignoredProps = [
     "id",
     "readOnly",
@@ -41,6 +45,7 @@ export class AppComponent implements OnInit {
     "type",
     "related.type",
   ];
+  relationshipType: string = "";
 
   constructor(public dialog: MatDialog) {}
 
@@ -70,12 +75,15 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (this.TABLE_CONFIG.columns) {
       this.TABLE_CONFIG.columns.forEach((element) => {
+        this.columnIdToNameMap[element.control.id] = element.control.name;
         let control = element.control;
         this.displayedColumns.push(control.name);
         this.displayedColumnsLabels[control.name] = control.label;
         this.dataSourceModel[control.name] = {
           type: control.type,
           dataType: control.dataType,
+          conditionalFormats: control.conditionalFormats,
+          width: element.width,
         };
       });
       this.displayedColumns.push("action");
@@ -107,6 +115,12 @@ export class AppComponent implements OnInit {
             dataSourceObj["related." + matchedKey]["type"] = controlType;
             dataSourceObj["related." + matchedKey]["dataType"] =
               controlDataType;
+            dataSourceObj["related." + matchedKey]["conditionalFormats"] =
+              matchedControl.conditionalFormats
+                ? matchedControl.conditionalFormats
+                : [];
+            dataSourceObj["related." + matchedKey]["width"] =
+              matchedControl.width;
 
             if (
               matchedControl.dataType == DataType.List ||
@@ -119,10 +133,10 @@ export class AppComponent implements OnInit {
         }
         dataSourceObj["id"] = element.id;
         dataSourceObj["related.id"] = element.relatedItem.id;
-        dataSourceObj["type"] = element.type;
         dataSourceObj["related.type"] = element.relatedItem.type;
         dataSourceObj["index"] = index;
-        dataSourceObj["action"] = { type: "action" };
+        dataSourceObj["action"] = { type: "action", width: 5 };
+        this.relationshipType = element.type;
 
         if (Object.keys(dataSourceObj)) this.dataSource.push(dataSourceObj);
       });
@@ -264,19 +278,30 @@ export class AppComponent implements OnInit {
   saveRelationshipData() {
     this.dataSource = this.updateIndexes(this.dataSource);
     var differentialDataSource = this.evaluateDifference();
-    const apiRes = this.mapDataSourceToApiResponse(differentialDataSource);
+    const apiRes = {
+      type: this.relationshipType,
+      items: this.mapDataSourceToApiResponse(differentialDataSource),
+    };
     // Add a mapper to map dataSource to API response
-    console.log(apiRes);
+    console.log(JSON.stringify(apiRes));
+    return apiRes;
   }
 
   mapDataSourceToApiResponse(differentialDataSource: any[]) {
-    const excludedProps = ["id", "type", "action"];
+    const excludedProps = ["id", "type", "action", "index"];
     return differentialDataSource.map((d) => {
       let item: any = { properties: {}, relatedItem: { properties: {} } };
       Object.keys(d).forEach((key) => {
         if (key === "action") {
           const actionValue: any = d[key].value;
-          item = { ...item, action: actionValue ? actionValue : "update" };
+          item = {
+            ...item,
+            action: actionValue ? actionValue : "update",
+            relatedItem: {
+              ...item.relatedItem,
+              action: actionValue ? actionValue : "update",
+            },
+          };
         } else if (key.includes("related.")) {
           const property = key.split(".")[1];
           if (excludedProps.includes(property)) {
@@ -382,5 +407,9 @@ export class AppComponent implements OnInit {
     dummyRow = { ...dummyRow, ...newItem };
 
     return dummyRow;
+  }
+
+  getElementStyle(width: any) {
+    return { width: `${width}%` };
   }
 }
