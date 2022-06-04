@@ -36,5 +36,24 @@
         "source_type": "Buy"
       }
     }
+  },
+  {
+    "id": "0BE02EBFAFA84F339CCC80553CA11AAA",
+    "type": "SupplierToSupplier",
+    "properties": {
+      "config_id": "0BE02EBFAFA84F339CCC80553CA11AAA"
+    },
+    "relatedItem": {
+      "id": "0BE02EBFAFA84F339CCC80553CA11CCC",
+      "type": "as_DemoItem",
+      "properties": {
+        "supplier_name": "Sup3",
+        "on_board": "2022-03-24T00:00:00",
+        "contact_number": "9869575139",
+        "max_quantity": 4,
+        "locations": "Spain",
+        "source_type": "Buy"
+      }
+    }
   }
 ]

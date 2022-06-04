@@ -107,7 +107,36 @@
         "selectionMode": 1,
         "controls": [],
         "rows": 4,
-        "visibleIf": [],
+        "visibleIf": [
+          {
+            "operator": 1,
+            "values": ["1"],
+            "field": {
+              "id": "7af516d2-a464-fe1e-6dfb-1451b67dc56f",
+              "parentId": "",
+              "rowNumber": 0,
+              "colNumber": 0
+            },
+            "logicalOperator": {
+              "1": "And",
+              "2": "Or",
+              "And": 1,
+              "Or": 2
+            }
+          },
+          {
+            "operator": 8,
+            "values": ["C"],
+            "field": {
+              "id": "444c444f-24ec-a29a-ac04-f512e7c39055",
+              "parentId": "",
+              "rowNumber": 0,
+              "colNumber": 0
+            },
+            "logicalOperator": 1
+          }
+        ],
+        "defaultValueExpression": "{item_number}+{major_rev}",
         "showCaption": true,
         "isDisable": false,
         "alwaysEnabled": true,
@@ -135,7 +164,6 @@
           "toType": "",
           "configurationType": 1
         },
-        "defaultValueExpression": "",
         "values": [null],
         "hasValidationErrors": false,
         "numberDateFormatting": {

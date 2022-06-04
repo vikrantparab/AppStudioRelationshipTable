@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from "@angular/cdk/drag-drop";
 import { random } from "lodash";
 import { MatSort, Sort } from "@angular/material/sort";
 import { MatDialog } from "@angular/material/dialog";
@@ -411,5 +415,29 @@ export class AppComponent implements OnInit {
 
   getElementStyle(width: any) {
     return { width: `${width}%` };
+  }
+
+  drop(event: CdkDragDrop<any[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.container.data.indexOf(event.item.data),
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousContainer.data.indexOf(event.item.data),
+        event.currentIndex
+      );
+    }
+
+    console.log(event.container.data);
+    this.dataSource = event.container.data;
+
+    this.dataSource = this.updateIndexes(this.dataSource);
+
+    this.table.renderRows();
   }
 }

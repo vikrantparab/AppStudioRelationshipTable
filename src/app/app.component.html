@@ -5,7 +5,7 @@
     [dataSource]="dataSource"
     cdkDropList
     [cdkDropListData]="dataSource"
-    (cdkDropListDropped)="dropTable($event)"
+    (cdkDropListDropped)="drop($event)"
     matSort
     (matSortChange)="sortData($event)"
   >
@@ -171,6 +171,9 @@
             >
               <span class="material-icons">delete</span>
             </a>
+            <a [ngClass]="{ disabled: readOnly, enabled: !readOnly }">
+              <span class="material-icons"> drag_indicator </span>
+            </a>
           </div>
         </ng-container>
       </td>
@@ -187,10 +190,8 @@
       cdkDrag
       [cdkDragDisabled]="readOnly"
       [cdkDragData]="row"
-    >
-      <div *cdkDragPreview>It is a Preview</div>
-      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-    </tr>
+    ></tr>
+    <div *cdkDragPlaceholder></div>
   </table>
 </div>
 <div class="table-controls">
